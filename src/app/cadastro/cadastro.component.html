@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <span>Cadastro de Usuário</span>
+</mat-toolbar>
+
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="nome" name="nome" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Idade</mat-label>
+      <input matInput type="number" [(ngModel)]="idade" name="idade" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Sexo</mat-label>
+      <mat-select [(ngModel)]="sexo" name="sexo" required>
+        <mat-option value="masculino">Masculino</mat-option>
+        <mat-option value="feminino">Feminino</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit">Salvar</button>
+      <button mat-raised-button color="warn" type="button" (click)="onCancel()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>
